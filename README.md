@@ -2,7 +2,7 @@
 
 **BASato sull'Italiano LInguaggio COnvertito, derivato dal BBC BASIC per BBC Micro**
 
-BASILICO-BB è un adattamento del celebre linguaggio **BBC BASIC** per Commodore 64, caratterizzato dalla localizzazione dei comandi in lingua italiana. Allo stato attuale, le parole chiave e le istruzioni del BASIC sono state interamente tradotte, mentre i messaggi di errore rimangono in fase di completamento.
+BASILICO-BB è un adattamento del celebre linguaggio **BBC BASIC**, caratterizzato dalla localizzazione dei comandi in lingua italiana. Allo stato attuale, le parole chiave e le istruzioni del BASIC sono state interamente tradotte, mentre i messaggi di errore rimangono in fase di completamento.
 
 ---
 
