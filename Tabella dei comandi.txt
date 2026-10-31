@@ -121,7 +121,7 @@ CHIUDI#            CLOSE#
 DISEGNA            DRAW
 ES#                EXT#
 FF#                EOF#
-GRAF            PLOT
+GRAF               PLOT
 METTIC#            BPUT#
 MUOVI              MOVE
 PG                 CLG
