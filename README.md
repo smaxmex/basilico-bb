@@ -1,4 +1,4 @@
-# BASILICO-BB-C64
+# BASILICO-BB
 
 **BASato sull'Italiano LInguaggio COnvertito, derivato dal BBC BASIC per BBC Micro**
 
