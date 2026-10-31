@@ -1,8 +1,8 @@
 # BASILICO-BB-C64
 
-**BASato sull'Italiano LInguaggio COnvertito, derivato dal BBC BASIC per Commodore 64**
+**BASato sull'Italiano LInguaggio COnvertito, derivato dal BBC BASIC per BBC Micro**
 
-BASILICO-BB-C64 è un adattamento del celebre linguaggio **BBC BASIC** per Commodore 64, caratterizzato dalla localizzazione dei comandi in lingua italiana. Allo stato attuale, le parole chiave e le istruzioni del BASIC sono state interamente tradotte, mentre i messaggi di errore rimangono in fase di completamento.
+BASILICO-BB è un adattamento del celebre linguaggio **BBC BASIC** per Commodore 64, caratterizzato dalla localizzazione dei comandi in lingua italiana. Allo stato attuale, le parole chiave e le istruzioni del BASIC sono state interamente tradotte, mentre i messaggi di errore rimangono in fase di completamento.
 
 ---
 
@@ -22,46 +22,16 @@ Sebbene la struttura del codice rimanga perfettamente compatibile, occorre prest
 
 ## Requisiti e utilizzo
 
-Per eseguire **BASILICO-BB-C64** su un emulatore Commodore 64 (es. VICE, anche in versione browser/online) o su un reale Commodore 64 / 128:
+Per eseguire **BASILICO-BB** su un emulatore di BBC Micro (es. BeebEM):
 
-1. Scaricare il file PRG del sistema.
-2. Caricarlo ed eseguirlo tramite il comando:
-```basic
-LOAD "BASILICO-BB",8
-RUN
-```
-
----
-
-## Utility DISCO e gestione dei File
-
-Il linguaggio originale non dispone di comandi nativi per le operazioni di I/O su disco (come la lettura della directory, la rinomina dei file, l'inizializzazione o la formattazione di un floppy). Per colmare questa mancanza, all'interno del repository è inclusa l'utility **DISCO**, che integra tutte le funzionalità di gestione dei file necessarie.
+1. Scaricare il file basilico.ROM del sistema.
+2. Impostare come ROM del BASIC il summenzionato file.
 
 ---
 
 ## Assemblatore integrato
 
-L'utility DISCO è interamente sviluppata in Assembly sfruttando l'**assemblatore integrato** ereditato dal BBC BASIC. Durante la programmazione in Assembly all'interno dell'ambiente BASILICO, occorre tenere presenti alcune particolarità sintattiche e di architettura:
-
-* **Mnemonico ORA**: L'istruzione `ORA` (Logical OR with Accumulator) è espressa dal mnemonico **`OA`**.
-* **Notazione Esadecimale**: Il prefisso per i valori esadecimali è **`&`** (anziché il classico simbolo `$` comunemente impiegato negli assemblatori per C64).
-* **Accesso ai Registri Video/IO (`&D020` / `&D021`)**: Per modificare direttamente i colori di bordo e sfondo tramite le locazioni di memoria `&D020` e `&D021`, è indispensabile commutare preventivamente la configurazione di memoria del registro CPU `&01` per rendere visibili i registri I/O al posto della ROM. Il blocco di codice deve essere strutturato come segue:
-
-```assembly
-SEI          ; Disabilita gli interrupt
-LDA &01
-PHA          ; Salva la configurazione di memoria corrente sullo stack
-LDA #&36     ; Seleziona la mappa di memoria con I/O abilitato
-STA &01
-
-; --- Inizio codice di modifica registri I/O (es. &D020 / &D021) ---
-; ...
-; --- Fine codice di modifica ---
-
-PLA          ; Ripristina la configurazione di memoria originale
-STA &01
-CLI          ; Riabilita gli interrupt
-```
+L'assemblatore integrato funziona, ma ci sono anomalie. Ad esempio, l'istruzione ORA del 6502 nell'assemblatore del BASILICO è diventata OA, usando il token OR del BBC BASIC. Si è preferito privilegiare la corretta traduzione in italiano - O - del comando OR piuttosto che lasciare intatta l'istruzione ORA dell'Assembly.
 
 ---
 
@@ -70,13 +40,12 @@ CLI          ; Riabilita gli interrupt
 Questo progetto è una modifica di un'opera preesistente e non rivendica la titolarità del codice sorgente o del binario originale. La proprietà intellettuale è così suddivisa:
 
 - **BBC BASIC (Core & Implementazione 6502)**: Tutti i diritti relativi al codice originale appartengono a **Acorn Computers Ltd.** (e ai suoi aventi causa).
-- **Interfaccia per Commodore 64**: Il porting e l'adattamento tra l'architettura BBC BASIC e il KERNAL Commodore 64 sono stati sviluppati da **J.G. Harston** ([mdfs.net](http://mdfs.net/Software/BBCBasic/C64/)).
 - **Localizzazione in Italiano**: La traduzione dei token, l'adattamento della sintassi italiana e la conseguente riallocazione dei byte sono a cura dell'autore di questo repository.
 
-Il codice sorgente originale e i file derivati rimangono soggetti alle rispettive note di copyright dei detentori dei diritti (**Acorn Computers** e **J.G. Harston**).
+Il codice sorgente originale e i file derivati rimangono soggetti alle rispettive note di copyright dei detentori dei diritti (**Acorn Computers** e suoi aventi causa).
 
 ---
 
 ## Crediti
 
-Un ringraziamento speciale a **J.G. Harston** per il prezioso lavoro di porting del BBC BASIC sul Commodore 64 e a **Sophie Wilson** unitamente a **Acorn Computers** per la creazione del linguaggio originale.
+Un ringraziamento speciale a **Sophie Wilson** unitamente a **Acorn Computers** per la creazione del linguaggio originale.
