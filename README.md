@@ -24,8 +24,9 @@ Sebbene la struttura del codice rimanga perfettamente compatibile, occorre prest
 
 Per eseguire **BASILICO-BB** su un emulatore di BBC Micro (es. BeebEM):
 
-1. Scaricare il file basilico.ROM del sistema.
-2. Impostare come ROM del BASIC il summenzionato file.
+1. Scaricare il file basilico.rom
+2. Impostare come ROM del BASIC il summenzionato file nell'emulatore di BBC Micro
+3. Resessare l'emulatore
 
 ---
 
