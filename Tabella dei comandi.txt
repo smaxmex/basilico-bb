@@ -35,7 +35,6 @@ FINO-A             UNTIL
 FINE               END
 FINEPROC           ENDPROC
 FN                 FN
-SP                 OFF
 GR                 DEG
 INSTR              INSTR
 INT                INT
@@ -79,13 +78,14 @@ RAD                RAD
 RINOMINA           RENUMBER
 RIPETI             REPEAT
 RQ                 SQR
-SE                 SE
+SE                 IF
 SALVA              SAVE
 SCRIVI             PRINT
 SCRIVI$            PRINT$
 SEN                SIN
 SGN                SGN
 SINISTRA$          LEFT$
+SP                 OFF
 SPZ                SPC
 STOP               STOP	
 STR$               STR$
