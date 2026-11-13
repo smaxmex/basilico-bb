@@ -10,7 +10,7 @@ BASILICO-BB è un adattamento del celebre linguaggio **BBC BASIC**, caratterizza
 
 Grazie alla struttura interna ereditata dal BBC BASIC, le istruzioni del linguaggio non vengono salvate come testo in chiaro, ma sotto forma di **token numerici**. Questo garantisce la piena compatibilità bidirezionale tra i programmi:
 
-- **Da BBC BASIC a BASILICO**: Un programma salvato in BBC BASIC (nella versione C64 sviluppata da J.G. Harston) può essere caricato in BASILICO. Le parole chiave verranno automaticamente mostrate e interpretate con i corrispettivi comandi in italiano.
+- **Da BBC BASIC a BASILICO**: Un programma salvato in BBC BASIC può essere caricato in BASILICO. Le parole chiave verranno automaticamente mostrate e interpretate con i corrispettivi comandi in italiano.
 - **Da BASILICO a BBC BASIC**: Un programma salvato in BASILICO, una volta riaperto nell'ambiente BBC BASIC originale, mostrerà ed eseguirà i comandi nella loro forma inglese standard.
 
 ### Note e avvertenze sulle variabili
@@ -26,7 +26,7 @@ Per eseguire **BASILICO-BB** su un emulatore di BBC Micro (es. BeebEM):
 
 1. Scaricare il file basilico.rom
 2. Impostare come ROM del BASIC il summenzionato file nell'emulatore di BBC Micro
-3. Resessare l'emulatore
+3. Resettare l'emulatore
 
 ---
 
